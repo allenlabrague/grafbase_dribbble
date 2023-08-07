@@ -2,15 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { NavLinks } from "@/constants";
 import AuthProviders from "./AuthProviders";
+import ThemeButton from "./ThemeButton";
+import NavbarMenu from "./NavbarMenu";
 
 const Navbar = () => {
-  const session = {};
-
   return (
     <nav className="flexBetween navbar">
-      <div className="flex-1 flexStart gap-10">
+      <div className="flex-1 flexStart gap-5">
+        <div className="xl:hidden">
+          <NavbarMenu />
+        </div>
         <Link href="/">
-          <Image src="/logo.svg" width={100} height={43} alt="Dribbble" />
+          <Image src="/logo.svg" width={100} height={100} alt="Dribbble" />
         </Link>
         <ul className="xl:flex hidden text-small gap-7">
           {NavLinks.map((link) => (
@@ -21,15 +24,13 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="flexCenter gap-4">
-        {session ? (
-          <>
-            UserPhoto
-            <Link href="/create-project">Share Work</Link>
-          </>
-        ) : (
+      <div className="flex items-center gap-5">
+        <div className="flexCenter">
           <AuthProviders />
-        )}
+        </div>
+        <div className="hidden md:block">
+          <ThemeButton />
+        </div>
       </div>
     </nav>
   );

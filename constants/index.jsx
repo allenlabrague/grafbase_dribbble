@@ -1,9 +1,9 @@
 export const NavLinks = [
+  { href: "/", key: "Find talent", text: "Find talent" },
+  { href: "/", key: "For designers", text: "For designers" },
   { href: "/", key: "Inspiration", text: "Inspiration" },
-  { href: "/", key: "Find Projects", text: "Find Projects" },
-  { href: "/", key: "Learn Development", text: "Learn Development" },
-  { href: "/", key: "Career Advancement", text: "Career Advancement" },
-  { href: "/", key: "Hire Developers", text: "Hire Developers" },
+  { href: "/", key: "Learn design", text: "Learn design" },
+  { href: "/", key: "Go Pro", text: "Go Pro" },
 ];
 
 export const categoryFilters = [
@@ -24,23 +24,23 @@ export const categoryFilters = [
 
 export const footerLinks = [
   {
-    title: "For developers",
+    title: "For designers",
     links: [
       "Go Pro!",
-      "Explore development work",
-      "Development blog",
-      "Code podcast",
-      "Open-source projects",
-      "Refer a Friend",
+      "Explore design work",
+      "Design blog",
+      "Overtime podcast",
+      "Playoffs",
+      ,
       "Code of conduct",
     ],
   },
   {
-    title: "Hire developers",
+    title: "Hire designers",
     links: [
       "Post a job opening",
       "Post a freelance project",
-      "Search for developers",
+      "Search for designers",
     ],
   },
   {
@@ -64,31 +64,26 @@ export const footerLinks = [
   {
     title: "Directories",
     links: [
-      "Development jobs",
-      "Developers for hire",
-      "Freelance developers for hire",
+      "Design jobs",
+      "Desigbers for hire",
+      "Freelance designers for hire",
       "Tags",
       "Places",
     ],
   },
   {
-    title: "Development assets",
-    links: [
-      "Code Marketplace",
-      "GitHub Marketplace",
-      "NPM Registry",
-      "Packagephobia",
-    ],
+    title: "Design assets",
+    links: ["Creative Market", "Fontspring", "Font Squirrel"],
   },
   {
-    title: "Development Resources",
+    title: "Design Resources",
     links: [
       "Freelancing",
-      "Development Hiring",
-      "Development Portfolio",
-      "Development Education",
+      "Design Hiring",
+      "Design Portfolio",
+      "Design Education",
       "Creative Process",
-      "Development Industry Trends",
+      "Design Industry Trends",
     ],
   },
 ];
