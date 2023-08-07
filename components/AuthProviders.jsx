@@ -3,6 +3,7 @@
 import ThemeButton from "./ThemeButton";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 import {
@@ -10,6 +11,7 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
+  Button,
 } from "@nextui-org/react";
 
 const TooltipHover = () => {
@@ -23,9 +25,15 @@ const TooltipHover = () => {
           width={80}
           alt="profile"
         />
-        <h2 className="mt-5 mb-7">{session.user.name}</h2>
+        <h2 className="mt-5">{session.user.name}</h2>
+        <div className="py-6">
+          <Button radius="sm">
+            <Link href="/create-project">Share work</Link>
+          </Button>
+        </div>
       </div>
       <div className="flex flex-col gap-5">
+        <h2>Profile</h2>
         <h2>Work preferences</h2>
         <h2>Settings</h2>
       </div>
@@ -58,13 +66,18 @@ const Nav = () => {
     <nav>
       <div className="flex items-center gap-3">
         {session?.user ? (
-          <div>
+          <div className="flex items-center gap-5">
+            <div className="hidden xl:flex">
+              <Button radius="sm">
+                <Link href="/create-project">Share work</Link>
+              </Button>
+            </div>
             <Popover backdrop="opaque" placement="bottom-end">
               <PopoverTrigger>
                 <Image
                   src={session?.user.image}
                   className="rounded-full cursor-pointer "
-                  width={50}
+                  width={40}
                   alt="profile"
                 />
               </PopoverTrigger>
@@ -82,7 +95,7 @@ const Nav = () => {
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
                 >
-                  Sign In
+                  Log in
                 </button>
               ))}
           </>
